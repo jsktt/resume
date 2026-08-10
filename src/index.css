@@ -1,0 +1,203 @@
+/* ---------------------------------------------------------------- reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ------------------------------------------------------------ variables */
+
+:root {
+  /* colour */
+  --paper: #f5f1e8;
+  --ink: #2b2b2b;
+  --ink-muted: #6f6960;
+  --rule: #ddd6c8;
+
+  /* Highlight colour. Swap this one value once it is chosen — it is used
+     for the name, links, and skills. Set to the ink colour for now so the
+     page reads as deliberately neutral. */
+  --accent: #2b2b2b;
+
+  /* type */
+  --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue',
+    Arial, sans-serif;
+
+  /* layout */
+  --measure: 44rem;
+  --gutter: 1.5rem;
+}
+
+/* --------------------------------------------------------------- base */
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* -------------------------------------------------------------- layout */
+
+.container {
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: 5rem;
+}
+
+/* -------------------------------------------------------------- header */
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.name {
+  color: var(--accent);
+  font-size: 2.5rem;
+}
+
+.title {
+  margin-top: 0.25rem;
+  color: var(--ink-muted);
+}
+
+.contact {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.separator {
+  margin-inline: 0.5rem;
+  color: var(--ink-muted);
+}
+
+/* ------------------------------------------------------------- section */
+
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1.5rem;
+}
+
+/* --------------------------------------------------------------- entry */
+
+.entry {
+  margin-top: 1.75rem;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-title {
+  font-size: 1.125rem;
+}
+
+.entry-period {
+  flex-shrink: 0;
+  color: var(--ink-muted);
+  font-size: 0.875rem;
+}
+
+.entry-description {
+  margin-top: 0.25rem;
+  color: var(--ink-muted);
+}
+
+/* The description is a muted summary; the bullets below it carry the detail,
+   so they sit at full contrast. */
+.bullet-list {
+  margin-top: 0.5rem;
+  padding-left: 1.125rem;
+  list-style: disc;
+}
+
+.bullet {
+  margin-top: 0.25rem;
+}
+
+.bullet::marker {
+  color: var(--ink-muted);
+}
+
+.entry-tech {
+  margin-top: 0.5rem;
+  color: var(--ink-muted);
+  font-size: 0.875rem;
+}
+
+/* -------------------------------------------------------------- skills */
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  list-style: none;
+}
+
+.skill {
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
