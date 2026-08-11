@@ -1,6 +1,7 @@
 // All resume content lives here. Edit this file to update the page.
 
 export const profile = {
+  kicker: 'PORTFOLIO',
   name: '김준성',
   title: 'Software Engineer',
   scope: '풀스택 · ML',
@@ -9,6 +10,8 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/junsung-kim99/',
 }
 
+// slug: the /projects/<slug> URL. The long-form write-up for that slug is loaded
+//   from the backend by fetchProjectDetail in projectDetails.ts.
 // description: one or two sentences summarizing what the project is.
 // bullets: what you personally did on it, one point per line.
 // tags: the stack, shown as chips. `bullets` on a tag lists the indexes of the
@@ -17,6 +20,7 @@ export const profile = {
 export type Tag = { label: string; bullets?: number[] }
 
 export const projects: {
+  slug: string
   name: string
   description: string
   link: string
@@ -25,6 +29,7 @@ export const projects: {
   tags: Tag[]
 }[] = [
   {
+    slug: 'erp',
     name: '대규모 ERP 프로젝트',
     description: '본사, 지점, 현장이 같은 부품 데이터를 실시간으로 공유하는 MSA 기반 ERP 프로젝트',
     link: 'https://github.com/BBD-AES',
@@ -44,6 +49,7 @@ export const projects: {
     ],
   },
   {
+    slug: 'pint',
     name: '이미지 공유 플랫폼 핀트',
     description: '핀트(Pint)는 사진 촬영 시 피사체를 선명하게 맞추는 초점(Focus)을 의미하는 사진계의 오랜 은어에서 착안했습니다. 우리는 "이 사진 어디서 찍었지?", "어떻게 보정했지?"라는 사용자의 근본적인 궁금증을 해결하고자 합니다.',
     link: 'https://github.com/Team-Pint',
@@ -71,6 +77,7 @@ export const projects: {
     ],
   },
   {
+    slug: 'prompt-classification',
     name: 'LLM을 사용한 프롬프트 분류화',
     description: '80억 개 이하의 파라미터를 가진 경량 LLM을 활용해 프롬프트 분류 시스템을 개발하고, 이를 통해 분류된 프롬프트를 텍스트 생성 모델이나 이미지 생성 모델 등 적합한 모델로 자동 라우팅하는 기능을 설계합니다. 또한 비윤리적이거나 유해하거나 제한된 프롬프트를 걸러낼 수 있는 커스터마이징 가능한 가드레일 기능을 통합하여, 시스템 전반의 안전성과 신뢰성을 확보합니다.',
     link: 'https://github.com/jsktt/prompt-classification',
@@ -111,7 +118,7 @@ export const experience: {
     role: '학교 보조 연구원',
     company: 'Bio-Inspired Science and Technology',
     period: '2023.05 ~ 2023.07',
-    description: '임베디드 팀에서 학부 연구원으로 Tendon-driven actuator system 개발에 참여했습니다.',
+    description: '임베디드 팀에서 학부 연구원으로 Tendon-driven actuator system 기반 PCB 보드 설계 및 actuator 시스템 돌아가는 코드 구현하는 거에 기여했습니다. 이 연구 경험을 통해서 다른 팀들이랑 꾸준히 communication 하는게 중요하고 추후 불상사를 방지 할수 있다는 걸 배웠습니다.',
     bullets: [
       '박쥐 모양 로봇의 귀·코·발 구조에 힘줄 구동 방식(tendon-driven actuation) 시스템을 프로토타이핑해 음향 연구에 필요한 실감 있는 구조 변형을 구현.',
       'Teensy 마이크로컨트롤러용 임베디드 C++ 펌웨어를 개발하고 ADC · DAC · UART · SPI를 레지스터 직접 조작으로 제어해 주변장치 응답 시간을 2ms 이하로 단축.',

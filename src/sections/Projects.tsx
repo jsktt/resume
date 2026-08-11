@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { projects } from '../content'
 import type { Tag } from '../content'
 
@@ -16,17 +17,19 @@ function ProjectEntry({
 
   const hover = (tag: Tag) => (tag.bullets ? () => setFocus(tag.bullets!) : undefined)
 
+  // The title goes to the write-up; the repo stays reachable next to the period.
   return (
     <article className={`entry reveal${first ? ' entry-first' : ''}`}>
-      <div className="entry-period">{project.period}</div>
-      <h3 className="entry-title">
-        {project.link ? (
-          <a href={project.link} target="_blank" rel="noreferrer">
-            {project.name}
+      <div className="entry-period">
+        {project.period}
+        {project.link && (
+          <a className="entry-repo" href={project.link} target="_blank" rel="noreferrer">
+            GitHub ↗
           </a>
-        ) : (
-          project.name
         )}
+      </div>
+      <h3 className="entry-title">
+        <Link to={`/projects/${project.slug}`}>{project.name}</Link>
       </h3>
       <p className="entry-description">{project.description}</p>
 
