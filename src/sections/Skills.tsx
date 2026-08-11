@@ -2,23 +2,23 @@ import { skills } from '../content'
 
 function Skills() {
   return (
-    <section id="skills" className="section">
-      <h2 className="section-title">Skills</h2>
+    <section id="skills">
+      <div className="section-label reveal">
+        <h2>Skills</h2>
+      </div>
 
-      {skills.map((group) => (
-        <article key={group.category} className="entry">
-          <div className="entry-head">
-            <h3 className="entry-title">{group.category}</h3>
+      <div className="skill-grid reveal">
+        {skills.map((group) => (
+          <div key={group.category}>
+            <div className="skill-category">{group.category}</div>
+            <ul className="skill-list">
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
-          <ul className="skill-list">
-            {group.items.map((item) => (
-              <li key={item} className="skill">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </article>
-      ))}
+        ))}
+      </div>
     </section>
   )
 }

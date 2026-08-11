@@ -2,17 +2,21 @@ import { education } from '../content'
 
 function Education() {
   return (
-    <section id="education" className="section">
-      <h2 className="section-title">Education</h2>
+    <section id="education">
+      <div className="section-label reveal">
+        <h2>Education</h2>
+      </div>
 
-      {education.map((school) => (
-        <article key={school.school} className="entry">
-          <div className="entry-head">
-            <h3 className="entry-title">{school.school}</h3>
-            <span className="entry-period">{school.period}</span>
-          </div>
-          <p className="entry-description">{school.degree}</p>
-          <p className="entry-description">{school.detail}</p>
+      {education.map((school, i) => (
+        <article
+          key={school.school}
+          className={`entry entry-compact reveal${i === 0 ? ' entry-first' : ''}`}
+        >
+          <div className="entry-period">{school.period}</div>
+          <h3 className="entry-title entry-title-sm">{school.school}</h3>
+          <p className="entry-note">
+            {school.degree} <span>· {school.detail}</span>
+          </p>
         </article>
       ))}
     </section>
