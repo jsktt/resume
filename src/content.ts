@@ -140,22 +140,3 @@ export const education = [
     detail: '머신러닝 수업 최우수 프로젝트 수상',
   },
 ]
-
-export const skills = [
-  {
-    category: 'Languages',
-    items: ['TypeScript', 'Python', 'Go', 'SQL'],
-  },
-  {
-    category: 'Frontend',
-    items: ['React', 'Vite', 'CSS'],
-  },
-  {
-    category: 'Backend',
-    items: ['Node.js', 'PostgreSQL', 'REST APIs'],
-  },
-  {
-    category: 'Tools',
-    items: ['Git', 'Docker', 'Linux'],
-  },
-]

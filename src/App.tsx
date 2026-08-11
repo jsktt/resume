@@ -2,7 +2,6 @@ import Header from './sections/Header'
 import Projects from './sections/Projects'
 import Experience from './sections/Experience'
 import Education from './sections/Education'
-import Skills from './sections/Skills'
 import { useReveal } from './useReveal'
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <Projects />
       <Experience />
       <Education />
-      <Skills />
     </main>
   )
 }
