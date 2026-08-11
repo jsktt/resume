@@ -20,8 +20,9 @@ function ExperienceEntry({
       }`}
     >
       <div className="entry-period">{job.period}</div>
-      <h3 className="entry-title entry-title-sm">{job.role}</h3>
-      <div className="entry-company">{job.company}</div>
+      <h3 className="entry-title entry-title-sm">
+        {job.role}, {job.company}
+      </h3>
       <p className="entry-description">{job.description}</p>
 
       {bullets.length > 0 && (

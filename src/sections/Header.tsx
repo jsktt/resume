@@ -13,6 +13,7 @@ function Header() {
           {profile.title}
           <span className="title-scope"> — {profile.scope}</span>
         </p>
+        <p className="bio">{profile.bio}</p>
         <p className="contact">
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
           <a href={profile.github} target="_blank" rel="noreferrer">

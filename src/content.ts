@@ -5,6 +5,8 @@ export const profile = {
   name: '김준성',
   title: 'Software Engineer',
   scope: '풀스택 · ML',
+  // 헤더의 직무/스코프 줄과 연락처 사이에 들어가는 두세 문장 소개.
+  bio: '서비스를 처음부터 끝까지 직접 만들고, 만든 뒤에 잘 돌아가게 만드는 일에 관심이 많습니다. 대규모 ERP와 이미지 공유 플랫폼에서 응답 성능과 보안 문제를 수치로 개선했고, 최근에는 경량 LLM을 제품에 얹는 방법을 공부하고 있습니다.',
   email: 'j_skt@naver.com',
   github: 'https://github.com/jsktt',
   linkedin: 'https://www.linkedin.com/in/junsung-kim99/',
